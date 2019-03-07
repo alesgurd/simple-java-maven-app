@@ -1,19 +1,15 @@
 pipeline {
     agent {
-        docker {
-            image 'gradle'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+        docker any
     stages {
         stage('Build') {
             steps {
-                sh 'gradle clean build'
+                sh './gradlew clean build'
             }
         }
         stage('Test') {
             steps {
-                sh 'gradlew test'
+                sh './gradlew test'
             }
             post {
                 always {
@@ -23,7 +19,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'gradlew artifactoryPublish'
+                sh './gradlew artifactoryPublish'
             }
         }
     }
