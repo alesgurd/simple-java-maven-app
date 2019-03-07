@@ -1,7 +1,9 @@
 version: "3"
 services:
   jenkins:
-    build: ./jenkins.Dockerfile
+    build:
+      context: .
+      dockerfile: jenkins.Dockerfile
     depends_on: 
       - artifactory
     volumes:
