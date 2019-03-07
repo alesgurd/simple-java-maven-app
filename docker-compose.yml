@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    depends_on: 
+      - artifactory
+    volumes:
+      - "$HOME/jenkins_home:/var/jenkins_home"
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+  artifactory:
+    image: docker.bintray.io/jfrog/artifactory-oss
+    ports: 
+      - "8081:8081"
