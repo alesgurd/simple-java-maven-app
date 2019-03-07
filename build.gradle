@@ -7,26 +7,64 @@ plugins {
     id 'maven-publish'
 }
 
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+  }
+}
+apply plugin: "com.jfrog.artifactory"
+
 repositories {
     mavenLocal()
     maven {
-        url = 'http://repo.maven.apache.org/maven2'
+        credentials {
+            username = "$artifactoryUser"
+            password = "$artifactoryPwd"
+        }
+        url = 'http://localhost:8081/artifactory/libs-releases'
     }
 }
 
-dependencies {
-    testCompile 'junit:junit:4.11'
-}
+configure(javaProjects()) {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
 
-group = 'com.mycompany.app'
-version = '1.0-SNAPSHOT'
-description = 'my-app'
-sourceCompatibility = '1.8'
+    dependencies {
+        testCompile 'junit:junit:4.7'
+    }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                artifact(file("$rootDir/gradle.properties"))
+            }
         }
     }
 }
+
+artifactory {
+    contextUrl = 'http://localhost:8081/artifactory'
+    publish {
+        repository {
+            repoKey = 'libs-snapshot-local' // The Artifactory repository key to publish to
+            username = "${artifactoryUser}" // The publisher user name
+            password = "${artifactoryPwd}" // The publisher password
+            // This is an optional section for configuring Ivy publication (when publishIvy = true).
+        }
+        defaults {
+            // Reference to Gradle publications defined in the build script.
+            // This is how we tell the Artifactory Plugin which artifacts should be
+            // published to Artifactory.
+            publications('mavenJava')
+            publishArtifacts = true
+            // Properties to be attached to the published artifacts.
+            properties = ['qa.level': 'basic', 'dev.team' : 'core']
+            publishPom = true // Publish generated POM files to Artifactory (true by default)
+        }
+    }
+}
+
