@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Execute') {
             steps {
-                sh 'java -jar sample-java-app-1.0-SNAPSHOT.jar'
+                sh 'java -jar /var/jenkins_home/workspace/sample-app/sample-java-app-1.0-20190307.190240-2.jar'
             }
         }
     }
