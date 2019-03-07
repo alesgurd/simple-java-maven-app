@@ -20,8 +20,8 @@ repositories {
     mavenLocal()
     maven {
         credentials {
-            username = "admin"
-            password = "3c3df451"
+            username = "admin123"
+            password = "admin123"
         }
         url = 'http://artifactory:8081/artifactory/libs-releases'
     }
@@ -55,8 +55,8 @@ artifactory {
     publish {
         repository {
             repoKey = 'libs-snapshot-local' // The Artifactory repository key to publish to
-            username = "admin"
-            password = "3c3df451"
+            username = "admin123"
+            password = "admin123"
             // This is an optional section for configuring Ivy publication (when publishIvy = true).
         }
         defaults {
