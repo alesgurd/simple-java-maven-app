@@ -15,6 +15,14 @@ plugins {
 
 apply plugin: "com.jfrog.artifactory"
 
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle - Artifactory - Jenkins Test',
+                   'Implementation-Version': 1.0,
+                   'Main-Class': 'com.mycompany.app.App'
+    }
+}
+
 repositories {
     jcenter()
     mavenLocal()

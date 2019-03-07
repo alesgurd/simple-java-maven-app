@@ -1,2 +1,5 @@
 Manifest-Version: 1.0
+Implementation-Title: Gradle - Artifactory - Jenkins Test
+Implementation-Version: 1.0
+Main-Class: com.mycompany.app.App
 

@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'gradle clean build'
+                sh './gradlew clean build'
             }
         }
         stage('Test') {
             steps {
-                sh 'gradle test'
+                sh './gradlew test'
             }
             post {
                 always {
@@ -21,10 +21,10 @@ pipeline {
                 }
             }
         }
-/*        stage('Deliver') {
+        stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
-            }*/
+                sh './gradlew artifactoryPublish'
+            }
         }
     }
 }
