@@ -32,7 +32,7 @@ version = '1.0-SNAPSHOT'
 description = 'sample-java-app'
 sourceCompatibility = '1.8'
 
-configure('my-app') {
+configure('sample-java-app') {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
 
