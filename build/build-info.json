@@ -1,0 +1,57 @@
+{
+  "version" : "1.0.1",
+  "name" : "my-app",
+  "number" : "1551973475128",
+  "type" : "GRADLE",
+  "buildAgent" : {
+    "name" : "Gradle",
+    "version" : "5.2.1"
+  },
+  "agent" : {
+    "name" : "Gradle",
+    "version" : "5.2.1"
+  },
+  "started" : "2019-03-07T12:44:35.109-0300",
+  "durationMillis" : 136,
+  "principal" : "mroldan",
+  "artifactoryPrincipal" : "admin",
+  "artifactoryPluginVersion" : "Unknown",
+  "vcs" : [ ],
+  "licenseControl" : {
+    "runChecks" : false,
+    "includePublishedArtifacts" : false,
+    "autoDiscover" : false,
+    "licenseViolationsRecipientsList" : "",
+    "scopesList" : ""
+  },
+  "modules" : [ {
+    "id" : "com.nisum.app:my-app:1.0-SNAPSHOT",
+    "artifacts" : [ {
+      "type" : "jar",
+      "sha1" : "9623c980e745a57bf43dce2eca7c13d6cac40c96",
+      "md5" : "9575d0968ecda32af583bcde11c5abb8",
+      "name" : "my-app-1.0-SNAPSHOT.jar"
+    }, {
+      "type" : "pom",
+      "sha1" : "4eaa90e44a3494b6030bba562ae384a5e945448a",
+      "md5" : "a940fbca99fd8a4a61ba1a0919457acb",
+      "name" : "my-app-1.0-SNAPSHOT.pom"
+    } ],
+    "excludedArtifacts" : [ ],
+    "dependencies" : [ {
+      "type" : "jar",
+      "sha1" : "d9444742a5b897c6280724a49f57a8155517d21f",
+      "md5" : "b03d4c6ff4cedcd731d6a6d1a3149f65",
+      "id" : "junit:junit:4.7",
+      "scopes" : [ "testCompileClasspath", "testRuntimeClasspath" ]
+    } ]
+  } ],
+  "governance" : {
+    "blackDuckProperties" : {
+      "runChecks" : false,
+      "includePublishedArtifacts" : false,
+      "autoCreateMissingComponentRequests" : false,
+      "autoDiscardStaleComponentRequests" : false
+    }
+  }
+}
