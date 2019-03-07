@@ -44,7 +44,7 @@ configure('my-app') {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
-                artifact(file("$rootDir/build/libs/my-app.jar"))
+                artifact(file("$rootDir/build/libs/sample-java-app-1.0-SNAPSHOT.jar"))
             }
         }
     }

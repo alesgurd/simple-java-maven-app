@@ -1,7 +1,7 @@
 {
   "version" : "1.0.1",
-  "name" : "my-app",
-  "number" : "1551973475128",
+  "name" : "sample-java-app",
+  "number" : "1551975377294",
   "type" : "GRADLE",
   "buildAgent" : {
     "name" : "Gradle",
@@ -11,8 +11,8 @@
     "name" : "Gradle",
     "version" : "5.2.1"
   },
-  "started" : "2019-03-07T12:44:35.109-0300",
-  "durationMillis" : 136,
+  "started" : "2019-03-07T13:16:17.198-0300",
+  "durationMillis" : 226,
   "principal" : "mroldan",
   "artifactoryPrincipal" : "admin",
   "artifactoryPluginVersion" : "Unknown",
@@ -25,17 +25,17 @@
     "scopesList" : ""
   },
   "modules" : [ {
-    "id" : "com.nisum.app:my-app:1.0-SNAPSHOT",
+    "id" : "com.nisum.app:sample-java-app:1.0-SNAPSHOT",
     "artifacts" : [ {
       "type" : "jar",
-      "sha1" : "9623c980e745a57bf43dce2eca7c13d6cac40c96",
-      "md5" : "9575d0968ecda32af583bcde11c5abb8",
-      "name" : "my-app-1.0-SNAPSHOT.jar"
+      "sha1" : "4a8b10cb09095c52b7d0deb2c30bcf32d0b65493",
+      "md5" : "5b89a36aede4a66c3b82c20dc974d9d8",
+      "name" : "sample-java-app-1.0-SNAPSHOT.jar"
     }, {
       "type" : "pom",
-      "sha1" : "4eaa90e44a3494b6030bba562ae384a5e945448a",
-      "md5" : "a940fbca99fd8a4a61ba1a0919457acb",
-      "name" : "my-app-1.0-SNAPSHOT.pom"
+      "sha1" : "79a42c61b9998db631ef9f640a5e3892b6cd6b77",
+      "md5" : "1c94f371dbbae922e3861a954a5c60fa",
+      "name" : "sample-java-app-1.0-SNAPSHOT.pom"
     } ],
     "excludedArtifacts" : [ ],
     "dependencies" : [ {
